@@ -1,12 +1,11 @@
 package lessons.services;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+
 @Scope("prototype")
 @Qualifier("main")
 public class GreetingServiceImpl implements GreetingService {
@@ -18,7 +17,6 @@ public class GreetingServiceImpl implements GreetingService {
         return "Greeting, user!";
     }
 
-    @Required
     public void setContext(ApplicationContext context) {
         this.context = context;
     }
